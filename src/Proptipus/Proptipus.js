@@ -46,7 +46,6 @@ class Proptipus extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div className="proptipus">

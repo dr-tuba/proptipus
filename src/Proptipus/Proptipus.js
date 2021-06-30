@@ -6,7 +6,6 @@ import ProptipusLogo from "../images/ProptipusLogo.png";
 // This is the state being imported in for cleanliness
 import ProptipusState from "./ProptipusState"
 
-
 import TentacleOne from "./Tentacles/TentacleOne";
 import TentacleTwo from "./Tentacles/TentacleTwo";
 import TentacleThree from "./Tentacles/TentacleThree";
@@ -18,7 +17,35 @@ import TentacleEight from "./Tentacles/TentacleEight";
 class Proptipus extends React.Component {
   state = ProptipusState
 
-  // This is where you will be writing most of your functions!
+  increment = () => {
+    this.setState({magicNumber: this.state.magicNumber + 1})
+  }
+
+  decrement = () => {
+    this.setState({magicNumber: this.state.magicNumber -1})
+  }
+
+  toggleMovies = () => {
+    this.setState({showMovies: !this.state.showMovies})
+  }
+
+  toggleGenre = (e) => {
+    switch(e.target.value) {
+      case 'All':
+        this.setState({moviesFilter: e.target.value})
+        break;
+      case 'Suspense':
+        this.setState({moviesFilter: e.target.value})
+        break;
+      case 'Horror':
+        this.setState({moviesFilter: e.target.value})
+        break;
+      case 'Family':
+        this.setState({moviesFilter: e.target.value})
+        break;
+    }
+  }
+
 
   render() {
     return (
@@ -29,14 +56,37 @@ class Proptipus extends React.Component {
           src={ProptipusBackground}
           alt="background"
         />
-        <TentacleOne/>
-        <TentacleTwo/>
-        <TentacleThree/>
-        <TentacleFour/>
-        <TentacleFive/>
-        <TentacleSix/>
-        <TentacleSeven/>
-        <TentacleEight/>
+        <TentacleOne
+          punchline = {this.state.punchline}
+         />
+        <TentacleTwo
+          fishCard = {this.state.favoriteFishGiOhCard}       
+         />
+        <TentacleThree
+         fishGiOhCard = {this.state.hatedFishGiOhCard}
+         />
+        <TentacleFour
+          friendsList = {this.state.friendsList}
+         />
+        <TentacleFive
+          magicNumber = {this.state.magicNumber}
+          increment = {this.increment}
+          decrement = {this.decrement}
+         />
+        <TentacleSix
+          magicNumber = {this.state.magicNumber}
+         />
+        <TentacleSeven
+          showMovies = {this.state.showMovies}
+          moviesFilter = {this.state.moviesFilter}
+          toggleMovies = {this.toggleMovies}
+          toggleGenre = {this.toggleGenre}
+         />
+        <TentacleEight
+          favoriteMovies = {this.state.favoriteMovies}
+          moviesFilter = {this.state.moviesFilter}
+          showMovies = {this.state.showMovies}
+         />
       </div>
     );
   }

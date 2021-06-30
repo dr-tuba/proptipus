@@ -1,15 +1,13 @@
 import React from "react";
 
-class TentacleSix extends React.Component {
-
-  render() {
+function TentacleSix(props) {
     return (
         <div className="tentacle-six">
         <span className="number-readout">
-          {/* Magic number goes here */}
+          {props.magicNumber}
         </span>
       </div>
     );
   }
-}
+
 export default TentacleSix;

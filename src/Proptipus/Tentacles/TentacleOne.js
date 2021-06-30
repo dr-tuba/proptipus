@@ -1,4 +1,5 @@
 import React from "react";
+
 class TentacleOne extends React.Component {
   render() {
     return (
@@ -8,7 +9,7 @@ class TentacleOne extends React.Component {
         <span className="joke-setup">How many tickles does it take to make me laugh?</span>
         <br/>
         <span className="punchline">
-        {/* punchline prop should go here */}
+          {this.props.punchline}
         </span>
       </div>
     );

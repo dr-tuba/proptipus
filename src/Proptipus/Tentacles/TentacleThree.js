@@ -6,23 +6,23 @@ function TentacleThree({ fishGiOhCard }){
     return (
       <div className="tentacle-three">
       <span className="fish-name">
-          {/* Fish name goes here */}
+          {fishGiOhCard.name}
         </span>
 
         <img alt="fish" className="fish-image" 
-        src={ tempImg/* Fish image goes here */} 
+        src={fishGiOhCard.image} 
         />
 
         <span className="fish-type">
-          {/* Fish type goes here */}
+          {fishGiOhCard.type}
         </span>
 
         <span className="fish-description">
-          {/* Fish description goes here */}
+          {fishGiOhCard.description}
         </span>
-
+        
         <span className="fish-attack">
-          {/* Fish attack goes here */}
+          {fishGiOhCard.attack}
         </span>
       </div>
     );

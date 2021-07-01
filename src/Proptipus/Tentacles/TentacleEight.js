@@ -5,8 +5,7 @@ function TentacleEight(props) {
   const suspenseMovies = props.favoriteMovies.filter(movie => movie.genre === 'Suspense')
   const familyMovies = props.favoriteMovies.filter(movie => movie.genre === 'Family')
   const allMovies = props.favoriteMovies
-  const noMovies = []
-
+ 
   function mapMovies(genre){
     return genre.map(movie => {
       return (
@@ -46,9 +45,7 @@ function TentacleEight(props) {
     )
   } else if (props.moviesFilter === 'All' && props.showMovies === false) {
     return (
-      <div className="tentacle-eight">
-        {mapMovies(noMovies)}
-      </div>
+        null
     )
   } else if (props.moviesFilter === 'Horror' && props.showMovies === false) {
     return (
